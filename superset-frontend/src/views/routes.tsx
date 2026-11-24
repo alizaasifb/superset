@@ -102,6 +102,13 @@ const ExecutionLogList = lazyWithRetry(
     ),
 );
 
+const ExecutionLogHistory = lazyWithRetry( 
+  () =>
+    import(
+      /* webpackChunkName: "ExecutionLogHistory" */ 'src/pages/ExecutionLogList/ExecutionLogHistory'
+    ),
+);
+
 const Chart = lazyWithRetry(
   () => import(/* webpackChunkName: "Chart" */ 'src/pages/Chart'),
 );
@@ -269,6 +276,7 @@ export const routes: Routes = [
     Component: AlertReportList,
     props: { isReportEnabled: true },
   },
+  { path: RoutePaths.ALERT_LOG_HISTORY, Component: ExecutionLogHistory }, 
   { path: RoutePaths.ALERT_LOG, Component: ExecutionLogList },
   {
     path: RoutePaths.REPORT_LOG,

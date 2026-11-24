@@ -48,6 +48,15 @@ class BaseAlertReportView(BaseSupersetView):
 
         return super().render_app_template()
 
+    @expose("/<pk>/log/history/", methods=("GET",))
+    @has_access
+    @permission_name("read")
+    def log_history(self, pk: int) -> FlaskResponse:  # pylint: disable=unused-argument
+        if not is_feature_enabled("ALERT_REPORTS"):
+            return abort(404)
+
+        return super().render_app_template()
+
 
 class AlertView(BaseAlertReportView):
     route_base = "/alert"

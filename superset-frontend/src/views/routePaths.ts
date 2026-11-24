@@ -41,6 +41,7 @@ export const RoutePaths = {
   QUERY_HISTORY: '/sqllab/history/',
   ALERTS: '/alert/list/',
   REPORTS: '/report/list/',
+  ALERT_LOG_HISTORY: '/alert/:alertId/log/history/', 
   ALERT_LOG: '/alert/:alertId/log/',
   REPORT_LOG: '/report/:alertId/log/',
   EXPLORE: '/explore/',

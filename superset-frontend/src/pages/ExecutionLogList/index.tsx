@@ -210,6 +210,11 @@ function ExecutionLog({
             <span>
               <Link to={path}>{t('Back to all')}</Link>
             </span>
+            {!isReportEnabled && (
+              <span>
+                <Link to={`/alert/${alertId}/log/history/`}>{t('History')}</Link>
+              </span>
+            )}
           </StyledHeader>
         }
       />
